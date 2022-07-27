@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="src/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>
+        <form id="search-form">
+          <input
+            type="text"
+            name="Enter city"
+            id="search-text-input"
+            placeholder="Enter city"
+          />
+          <input
+            type="submit"
+            value="Submit"
+            class="btn btn-success"
+            id="location-search"
+          />
+        </form>
+        <button id="current">Current</button>
+        <p>Today:25.06.2022</p>
+      </h1>
+      <h2 id="city-name">Kharkiv,Kharkiv state, Ukraine</h2>
+      <h3>
+        <diw class="date"> Sat 13:00</diw><span class="weather">cloudy</span>
+      </h3>
+      <h4>
+        <span class="temperature" id="celisium"> 22</span>
+        <span class="units">ºC |</span>
+        <a href="#" id="fahrenheit-link">ºF</a>
+      </h4>
+      <h5>
+        <img
+          src="https://ru.meteocast.net/tpl/images/meteocast_sun_and_cloud.gif"
+          alt="picter of weather"
+        />
+      </h5>
+      <ul>
+        <li id="fallout">Fallout: 10%</li>
+        <li id="humidity">Humidity: 70%</li>
+        <li id="wind-speed">Wind: 4 m/s</li>
+      </ul>
+      <div class="row">
+        <div class="col">
+          Sunday <br />🌤<br />
+          <strong>22º</strong> <br />
+          18º
+        </div>
+        <div class="col">
+          Monday<br />
+          ☀️<br />
+          <strong>29º</strong> <br />
+          17º
+        </div>
+        <div class="col">
+          Tuesday<br />🌤<br /><strong>32º</strong><br />
+          19º
+        </div>
+        <div class="col">
+          Wednesday<br />🌤<br /><strong>28º</strong><br />
+          16º
+        </div>
+        <div class="col">
+          Thursday<br />🌤<br /><strong>26º</strong><br />
+          16º
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
