@@ -59,12 +59,13 @@ h1 {
   .weather {
     color: darkorange;
     border: 1px solid;
+   text-transform: capitalize;
   }
   
   button {
     color: chartreuse;
   }
-  .open-sour{ margin: 20px 20px 20px 70px;}
+  .open-sour{ margin: 20px 20px 20px 80px;}
   
   .sour {
    text-decoration: none;
@@ -73,3 +74,4 @@ h1 {
   .sour:hover{
     text-decoration: underline;
   }
+  a{text-decoration: none;}

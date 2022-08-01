@@ -9,14 +9,77 @@ function showTime() {
       "Friday",
       "Saturday"
     ];
-    let currentDay = days[currentTime.getDay()];
+    let currentDay =days[currentTime.getDay()];
     let currentHour = currentTime.getHours();
+    
     let currentMinute = currentTime.getMinutes();
+    
+    
     return `${currentDay} ${currentHour}:${currentMinute}`;
+
   }
   
   let date = document.querySelector(".date");
   date.innerHTML = showTime();
+    
+function FormData(){
+  let Time=new Date();
+  let mounth=[
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+  ]
+  let days=[
+    "00",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    
+  ]
+  let dayMounth=days[Time.getDay()];
+  let year=Time.getFullYear();
+  let currentmounth=mounth[Time.getMonth()];
+  return ` Today: ${dayMounth}.${currentmounth}.${year}`;
+}
+
+  let timeShow=document.querySelector(".showTime");
+  timeShow.innerHTML=FormData();
   
   function search(event) {
     event.preventDefault();
@@ -41,6 +104,7 @@ function showTime() {
     document.querySelector(".weather").innerHTML = ` ${fallout}`;
     document.querySelector("#wind-speed").innerHTML = `Wind:${windSpeed} m/s`;
     document.querySelector("#humidity").innerHTML = `Humidity:${humid}%`;
+    
   }
   
   function handlePosition(position) {
