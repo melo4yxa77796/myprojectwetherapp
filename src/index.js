@@ -39,7 +39,7 @@ function FormData(){
     "12",
   ]
   let days=[
-    "00",
+    "31",
     "01",
     "02",
     "03",
@@ -99,12 +99,15 @@ function FormData(){
     let humid = Math.round(response.data.main.humidity);
     let windSpeed = Math.round(response.data.wind.speed);
     let fallout = response.data.weather[0].main;
+    let iconElement=document.querySelector("#icon");
     document.querySelector("#city-name").innerHTML = `${cityName}`;
     document.querySelector("#celisium").innerHTML = `${temp}`;
     document.querySelector(".weather").innerHTML = ` ${fallout}`;
     document.querySelector("#wind-speed").innerHTML = `Wind:${windSpeed} m/s`;
     document.querySelector("#humidity").innerHTML = `Humidity:${humid}%`;
-    
+    let iconUrl=`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    iconElement.setAttribute("src", iconUrl);
+    iconElement.setAttribute("alt",response.data.weather[0].description);
   }
   
   function handlePosition(position) {
