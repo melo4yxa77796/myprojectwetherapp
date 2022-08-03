@@ -146,4 +146,11 @@ function FormData(){
   searchInput.addEventListener("keypress", enterPress);
   let submitButton = document.querySelector("#location-search");
   submitButton.addEventListener("click", getSearchCity);
-  
+   
+function showFahrenheitTemperature(event){
+  event.preventDefault();
+  alert("link cliked");
+}
+
+  let fahrenheitLink=document.querySelector("#fahrenheit-link");
+  fahrenheitLink.addEventListener("click",showFahrenheitTemperature);
