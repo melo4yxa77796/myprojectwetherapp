@@ -160,4 +160,14 @@ function showFahrenheitTemperature(event){
 let celsiusTemperature=null;
 
   let fahrenheitLink=document.querySelector("#fahrenheit-link");
-  fahrenheitLink.addEventListener("click",showFahrenheitTemperature);s
+  fahrenheitLink.addEventListener("click",showFahrenheitTemperature);
+
+function showCelsiusTemperature(event){
+  event.preventDefault();
+  let temperatureElement=document.querySelector("#celisium");
+  temperatureElement.innerHTML=celsiusTemperature;
+}
+
+
+  let celsiusLink=document.querySelector("#celsius-link");
+  celsiusLink.addEventListener("click",showCelsiusTemperature);
