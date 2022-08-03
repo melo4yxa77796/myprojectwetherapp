@@ -165,7 +165,7 @@ let celsiusTemperature=null;
 function showCelsiusTemperature(event){
   event.preventDefault();
   let temperatureElement=document.querySelector("#celisium");
-  temperatureElement.innerHTML=celsiusTemperature;
+  temperatureElement.innerHTML=Math.round(celsiusTemperature);
 }
 
 
