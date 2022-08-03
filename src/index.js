@@ -94,12 +94,15 @@ function FormData(){
   formCity.addEventListener("submit", search);
   
   function showWeather(response) {
-    let temp = Math.round(response.data.main.temp);
+    let temp = Math.round(celsiusTemperature);
     let cityName = response.data.name;
     let humid = Math.round(response.data.main.humidity);
     let windSpeed = Math.round(response.data.wind.speed);
     let fallout = response.data.weather[0].main;
     let iconElement=document.querySelector("#icon");
+    
+    celsiusTemperature=response.data.main.temp;
+
     document.querySelector("#city-name").innerHTML = `${cityName}`;
     document.querySelector("#celisium").innerHTML = `${temp}`;
     document.querySelector(".weather").innerHTML = ` ${fallout}`;
@@ -149,8 +152,12 @@ function FormData(){
    
 function showFahrenheitTemperature(event){
   event.preventDefault();
-  alert("link cliked");
+  
+  let temperatureElement=document.querySelector("#celisium");
+  let fahrenheitTemperature=(celsiusTemperature*9/5)+32;
+  temperatureElement.innerHTML=Math.round(fahrenheitTemperature);
 }
+let celsiusTemperature=null;
 
   let fahrenheitLink=document.querySelector("#fahrenheit-link");
-  fahrenheitLink.addEventListener("click",showFahrenheitTemperature);
+  fahrenheitLink.addEventListener("click",showFahrenheitTemperature);s
