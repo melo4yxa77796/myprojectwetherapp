@@ -152,7 +152,8 @@ function FormData(){
    
 function showFahrenheitTemperature(event){
   event.preventDefault();
-  
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let temperatureElement=document.querySelector("#celisium");
   let fahrenheitTemperature=(celsiusTemperature*9/5)+32;
   temperatureElement.innerHTML=Math.round(fahrenheitTemperature);
@@ -164,6 +165,8 @@ let celsiusTemperature=null;
 
 function showCelsiusTemperature(event){
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperatureElement=document.querySelector("#celisium");
   temperatureElement.innerHTML=Math.round(celsiusTemperature);
 }
