@@ -100,6 +100,9 @@ function FormData(){
   formCity.addEventListener("submit", search);
   
   function showWeather(response) {
+    
+celsiusTemperature=response.data.main.temp;
+
     let temp = Math.round(celsiusTemperature);
     let cityName = response.data.name;
     let humid = Math.round(response.data.main.humidity);
@@ -107,7 +110,7 @@ function FormData(){
     let fallout = response.data.weather[0].main;
     let iconElement=document.querySelector("#icon");
     
-    celsiusTemperature=response.data.main.temp;
+    
 
     document.querySelector("#city-name").innerHTML = `${cityName}`;
     document.querySelector("#celisium").innerHTML = `${temp}`;
