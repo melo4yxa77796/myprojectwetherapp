@@ -11,11 +11,15 @@ function showTime() {
     ];
     let currentDay =days[currentTime.getDay()];
     let currentHour = currentTime.getHours();
-    if (currentHour<10) {
+    if (currentHour<10){
       currentHour=`0${currentHour}`;
     }
+    
+    
     let currentMinute = currentTime.getMinutes();
-    if(currentMinute<10){currentMinute=`0${minutes};`}
+    if(currentMinute<10){
+      currentMinute=`0${currentMinute}`;
+    }
     
     return `${currentDay} ${currentHour}:${currentMinute}`;
 
@@ -154,8 +158,7 @@ function FormData(){
    
 function showFahrenheitTemperature(event){
   event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
+  
   let temperatureElement=document.querySelector("#celisium");
   let fahrenheitTemperature=(celsiusTemperature*9/5)+32;
   temperatureElement.innerHTML=Math.round(fahrenheitTemperature);
@@ -167,8 +170,7 @@ let celsiusTemperature=null;
 
 function showCelsiusTemperature(event){
   event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
+  
   let temperatureElement=document.querySelector("#celisium");
   temperatureElement.innerHTML=Math.round(celsiusTemperature);
 }
