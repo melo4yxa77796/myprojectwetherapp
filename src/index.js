@@ -11,9 +11,11 @@ function showTime() {
     ];
     let currentDay =days[currentTime.getDay()];
     let currentHour = currentTime.getHours();
-    
+    if (currentHour<10) {
+      currentHour=`0${currentHour}`;
+    }
     let currentMinute = currentTime.getMinutes();
-    
+    if(currentMinute<10){currentMinute=`0${minutes};`}
     
     return `${currentDay} ${currentHour}:${currentMinute}`;
 
