@@ -76,7 +76,7 @@ h1 {
   }
   a{text-decoration: none;}
 
-  .weather-temperature.active{
+  .active{
     color:black;
     cursor: default;
   }
