@@ -76,4 +76,8 @@ h1 {
   }
   a{text-decoration: none;}
 
+.active{
+  color:black;
+  cursor:default;
+}
   
