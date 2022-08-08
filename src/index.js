@@ -78,7 +78,7 @@ function FormData(){
     "30",
     
   ]
-  let dayMounth=days[Time.getDay()];
+  let dayMounth=days[Time.getDate()];
   let year=Time.getFullYear();
   let currentmounth=mounth[Time.getMonth()];
   return ` Today: ${dayMounth}.${currentmounth}.${year}`;
