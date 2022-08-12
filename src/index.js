@@ -95,7 +95,6 @@ function formatDay(timestamp){
 }
 
 
-
   function displayForecast(response){
     let forecast=response.data.daily;
     
@@ -128,7 +127,8 @@ forecast.forEach(function(forecastDay,index){
     axios.get(apiUrl).then(displayForecast);
   }
 
-  function search(event) {
+
+function search(event) {
     event.preventDefault();
   
     let searchInput = document.querySelector("#search-text-input");
@@ -137,13 +137,12 @@ forecast.forEach(function(forecastDay,index){
     h2.innerHTML = `${searchInput.value}`;
   }
   let formCity = document.querySelector("#search-form");
-  
   formCity.addEventListener("submit", search);
-  
 
-  function showWeather(response) {
+function showWeather(response) {
     
 celsiusTemperature=response.data.main.temp;
+
 
     let temp = Math.round(celsiusTemperature);
     let cityName = response.data.name;
@@ -165,14 +164,28 @@ celsiusTemperature=response.data.main.temp;
 
     getForecast(response.data.coord);
   }
-  
-  function handlePosition(position) {
+
+function handlePosition(position) {
     let apiKey = "3fc4a1a542593e4089e587a81b28f31f";
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
     axios.get(url).then(showWeather);
   }
-  
-  function getWeatherCity(response) {
+function handleSubmit(event){
+  event.preventDefault();
+  let city=document.querySelector("#search-text-input").value;
+  searchCity(city);
+}
+
+
+function search(city){
+    let apiKey="3fc4a1a542593e4089e587a81b28f31f";
+    let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+axios.get(apiUrl).then(showWeather);}
+
+let form=document.querySelector("form");
+form.addEventListener("submit",handleSubmit);
+
+function getWeatherCity(response) {
     let lat = response.data.coord.lat;
     let lon = response.data.coord.lon;
     let apiKey = "3fc4a1a542593e4089e587a81b28f31f";
@@ -186,6 +199,7 @@ celsiusTemperature=response.data.main.temp;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(getWeatherCity);
   }
+
   function enterPress(event) {
     if (event.key === "Enter") {
       event.preventDefault();
@@ -233,4 +247,4 @@ function showCelsiusTemperature(event){
   celsiusLink.addEventListener("click",showCelsiusTemperature);
 
 
-  
+ search("kharkiv");
