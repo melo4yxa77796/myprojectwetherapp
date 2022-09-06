@@ -41,7 +41,7 @@ h1 {
   .container {
     border: 2px solid red;
     padding: 10px;
-    background-color: rgb(215, 237, 219);
+    background-color: #e3dfc9;
   }
   .col {
     border: 1px solid red;
